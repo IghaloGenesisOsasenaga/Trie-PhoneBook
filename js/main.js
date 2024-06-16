@@ -6,17 +6,14 @@ contact structure
     contacts: [
         {
             name
-            id
             number
         },
         {
             name
-            id
             number
         },
         {
             name
-            id
             number
         }
     ]
