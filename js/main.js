@@ -63,14 +63,21 @@ function searchContacts(searchPrefix) {
 function updateContactList(IDlist) {
     contactList.innerHTML = '';
 
-    if (IDlist.length == 0) {
-        contactList.innerHTML = "<li class='empty-list'>No Contacts Found";
+    if (IDlist.length === 0) {
+        contactList.innerHTML = "<li class='empty-list'>No Contacts Found</li>";
     } else {
         IDlist.forEach(id => {
-            contactList.innerHTML += `<li id="${id}" onclick=viewContact() class="contact">${contactIDlookup[id].name}</li>`;
+            let listItem = document.createElement('li');
+            listItem.id = id;
+            listItem.className = 'contact';
+            listItem.textContent = contactIDlookup[id].name;
+            listItem.addEventListener('click', viewContact);
+
+            contactList.appendChild(listItem);
         });
     }
 }
+
 
 
 // This function clears the contact list and append all available contacts on localstorage.
