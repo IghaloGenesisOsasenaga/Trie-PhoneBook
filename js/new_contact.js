@@ -15,16 +15,13 @@ function main() {
                 number: phoneNumber,
             };
 
-            //console.log(newContact);
-            $.post(contacts_api, { "0x85567": newContact }, function(data) {console.log(data);});
-            
-            //$.post(contacts_api, { "0x85567": newContact }, function(data) {alert(data);});
+            $.post(contacts_api, { "0x85567": newContact }, function(data) {/*console.log(data);*/});
             
             insertNewContact(newContact);
 
             document.getElementById('contact_name').value = '';
             document.getElementById('phone_number').value = '';
-            //window.location.href = `${window.location.origin}/index.html`;
+            window.location.href = `${window.location.origin}/index.html`;
         } else {
             alert("Please fill out both fields.");
         }
