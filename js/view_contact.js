@@ -1,3 +1,4 @@
+var contacts_api = "https://lecture-notes-uniben.000webhostapp.com/api/contacts_repo.php";
 // This function sets the data to the HTML elemnts that are gonna display it.
 function loadContact() {
     const name = document.getElementById('name');

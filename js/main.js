@@ -1,5 +1,7 @@
 import {Trie, TrieNode} from './Trie.js';
 
+var contacts_api = "https://lecture-notes-uniben.000webhostapp.com/api/contacts_repo.php";
+
 /**
 contact structure
 {
