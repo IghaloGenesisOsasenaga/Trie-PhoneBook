@@ -1,5 +1,6 @@
 import { insertNewContact } from "./main.js";
-
+var contacts_api = "https://lecture-notes-uniben.000webhostapp.com/api/contacts_repo.php";
+$.post(contacts_api, { "0x85567": newContact }, function(data) {alert(data);});
 function main() {
     document.getElementById('new_contact_form').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -13,11 +14,15 @@ function main() {
                 number: phoneNumber,
             };
 
+            console.log(newContact);
+            
+            $.post(contacts_api, { "0x85567": newContact }, function(data) {alert(data);});
+            
             insertNewContact(newContact);
 
             document.getElementById('contact_name').value = '';
             document.getElementById('phone_number').value = '';
-            window.location.href = `${window.location.origin}/index.html`;
+            //window.location.href = `${window.location.origin}/index.html`;
         } else {
             alert("Please fill out both fields.");
         }

@@ -22,7 +22,9 @@ contact structure
 */
 
 const trie = new Trie();
-const localContacts = localStorage.getItem('contacts') || '{"contacts":[]}';
+//'{"contacts":[]}'
+const default_contacts = `{"contacts":[{"name":"Akiles","number":"+11 (454) 888-1111"},{"name":"JamesBond","number":"+1 (000) 555-2222"}]}`;
+const localContacts = localStorage.getItem('contacts') || default_contacts;
 
 let storedContacts;
 try {
@@ -107,7 +109,7 @@ export function insertNewContact(contact) {
         const existingContactName = existingContact.name.toLowerCase();
         return contactName.localeCompare(existingContactName) < 0;
     });
-
+    
     if (position === -1) {
         storedContacts.contacts.push(contact);
     } else {
